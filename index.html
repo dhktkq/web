@@ -7,20 +7,18 @@
       <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/01/84/0d/01840dbb-646b-9391-94eb-85bc55ad1023/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/1200x600wa.png">
       <meta property="og:description" content="OURHOME">
     <title>아워홈 MealCare 실행</title></title>
-    <script>
-        window.addEventListener('popstate', function(event) {
-            location.href = "kakaotalk://inappbrowser/close";
-        });        
-        document.addEventListener('visibilitychange', function() {
+    <script>              
+        // 페이지가 로드되면 mealcare 앱 실행
+       window.onload = function() {      
+        location.href = "ohmealcare://";    
+       }
+
+        //앱을 닫으면 인앱브라우저 종료
+        window.addEventListener('visibilitychange', function() {
         if (document.visibilityState === 'visible') {
            location.href = "kakaotalk://inappbrowser/close";
         } 
         });
-        
-        // 페이지가 로드되면 다른 페이지로 이동
-       window.onload = function() {      
-        location.href = "ohmealcare://";    
-       }
     </script>
 </head>
 <body>
